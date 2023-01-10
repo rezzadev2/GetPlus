@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcvw_data"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shmr_load"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <include layout="@layout/include_shimmer_placeholder"/>
+            <include layout="@layout/include_shimmer_placeholder"/>
+            <include layout="@layout/include_shimmer_placeholder"/>
+        </LinearLayout>
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+</RelativeLayout>

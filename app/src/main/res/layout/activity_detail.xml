@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rvly_root"
+    android:background="@color/activity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activity.MainActivity">
+
+    <RelativeLayout
+        android:id="@+id/rvly_header"
+        android:background="@color/primary"
+        android:layout_width="match_parent"
+        android:layout_height="45dp">
+
+        <com.balysv.materialripple.MaterialRippleLayout
+            android:id="@+id/mrly_back"
+            android:layout_width="50dp"
+            android:layout_height="match_parent">
+            <ImageView
+                android:layout_gravity="center"
+                android:src="@drawable/arrow_back"
+                android:layout_width="16dp"
+                android:layout_height="16dp"/>
+        </com.balysv.materialripple.MaterialRippleLayout>
+
+
+        <TextView
+            android:id="@+id/txvw_title"
+            android:fontFamily="@font/roboto"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/mrly_back"
+            android:textSize="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcvw_data"
+        android:layout_below="@+id/rvly_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shmr_load"
+        android:layout_below="@+id/rvly_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <include layout="@layout/include_shimmer_placeholder"/>
+            <include layout="@layout/include_shimmer_placeholder"/>
+            <include layout="@layout/include_shimmer_placeholder"/>
+            <include layout="@layout/include_shimmer_placeholder"/>
+        </LinearLayout>
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+
+
+</RelativeLayout>
