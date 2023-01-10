@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.rezza.getplus.R
@@ -27,9 +28,16 @@ class PromoAdapter(val context : Context,  private val carouselDataList: ArrayLi
         val data = carouselDataList[position]
         val textView = holder.itemView.findViewById<TextView>(R.id.txvw_title)
         val imvw_promo = holder.itemView.findViewById<ImageView>(R.id.imvw_promo)
+        val card_body = holder.itemView.findViewById<CardView>(R.id.card_body)
+
         val title =  "Promo "+data.order
         textView.text = title
         Glide.with(context).load(data.imageUrl).into(imvw_promo)
+
+        card_body.setOnClickListener {
+            onSelectListener.onSelected(data)
+        }
+
 
     }
 
@@ -37,4 +45,13 @@ class PromoAdapter(val context : Context,  private val carouselDataList: ArrayLi
         return carouselDataList.size
     }
 
+    private lateinit var onSelectListener : OnSelectListener
+
+    fun setOnSelectListener(onSelectListener : OnSelectListener){
+        this.onSelectListener = onSelectListener
+    }
+
+    interface OnSelectListener{
+        fun onSelected(data : PromoData)
+    }
 }

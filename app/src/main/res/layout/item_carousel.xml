@@ -6,6 +6,7 @@
 
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/card_body"
         app:cardCornerRadius="5dp"
         app:cardBackgroundColor="#fff9c4"
         app:cardUseCompatPadding="true"

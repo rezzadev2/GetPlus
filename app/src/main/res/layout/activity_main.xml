@@ -71,12 +71,36 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"/>
 
-        <androidx.viewpager2.widget.ViewPager2
-            android:id="@+id/view_pager"
+        <RelativeLayout
             android:layout_marginTop="10dp"
             android:layout_width="match_parent"
-            android:layout_height="260dp"
-        />
+            android:layout_height="wrap_content">
+            <com.facebook.shimmer.ShimmerFrameLayout
+                android:id="@+id/shmr_promo"
+                android:layout_width="match_parent"
+                android:layout_height="260dp">
+
+                <androidx.cardview.widget.CardView
+                    app:cardCornerRadius="4dp"
+                    app:cardUseCompatPadding="true"
+                    app:cardElevation="6dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <View
+                        android:background="@color/shimmer"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/pubg"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+                </androidx.cardview.widget.CardView>
+            </com.facebook.shimmer.ShimmerFrameLayout>
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/view_pager"
+                android:layout_width="match_parent"
+                android:layout_height="260dp"/>
+        </RelativeLayout>
+
+
     </LinearLayout>
 
 

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/activity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activity.MainActivity">
+
+    <RelativeLayout
+        android:id="@+id/rvly_header"
+        android:background="@color/primary"
+        android:layout_width="match_parent"
+        android:layout_height="56dp">
+
+        <TextView
+            android:id="@+id/txvw_title"
+            android:text="@string/title"
+            android:fontFamily="@font/roboto"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+        <com.balysv.materialripple.MaterialRippleLayout
+            android:layout_alignParentEnd="true"
+            android:id="@+id/mrly_close"
+            android:layout_width="60dp"
+            android:layout_height="match_parent">
+            <ImageView
+                android:src="@drawable/ic_close"
+                android:layout_gravity="center"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                app:tint="@color/white" />
+        </com.balysv.materialripple.MaterialRippleLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_below="@id/rvly_header"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <WebView
+            android:id="@+id/wbvw_main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </LinearLayout>
+
+
+
+
+</RelativeLayout>
